@@ -37,8 +37,8 @@ The first step to preprocess the images is to create a copy of the image(so we w
 
 Here is an example of a traffic sign image before and after grayscaling.
 
-![alt text][https://github.com/ektorasdev/Traffic-Signs-Classifier/tree/master/grayscale_img/image_30.PNG]
-![alt text][https://github.com/ektorasdev/Traffic-Signs-Classifier/tree/master/grayscale_img/image_prior.PNG]
+[image1]: ./grayscale_img/image_30.PNG
+[image2]: ./grayscale_img/image_prior.PNG
 
 
 #### 2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
@@ -83,11 +83,11 @@ To train the model i used the LeNet architecture and mostly by tweaking variable
 
 From the German Traffic Signs i've provided 6 images:
 
-![alt text][https://github.com/ektorasdev/Traffic-Signs-Classifier/tree/master/predict_signs/image_1.jpg] 
-![alt text][https://github.com/ektorasdev/Traffic-Signs-Classifier/tree/master/predict_signs/image_2.jpg] 
-![alt text][https://github.com/ektorasdev/Traffic-Signs-Classifier/tree/master/predict_signs/image_3.jpg] 
-![alt text][https://github.com/ektorasdev/Traffic-Signs-Classifier/tree/master/predict_signs/image_4.jpg] 
-![alt text][https://github.com/ektorasdev/Traffic-Signs-Classifier/tree/master/predict_signs/image_6.jpg]
+[image3]: ./predict_signs/image_1.jpg
+[image4]: ./predict_signs/image_2.jpg
+[image5]: ./predict_signs/image_3.jpg
+[image6]: ./predict_signs/image_4.jpg
+[image7]: ./predict_signs/image_6.jpg
 
 The difficulties for these signs where mostly due to the background of each sign or based on the shape. For example triangle shaped signs are complete different from circled shaped signs and so the classification will be completly different.
 
