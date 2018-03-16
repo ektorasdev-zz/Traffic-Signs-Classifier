@@ -1,33 +1,5 @@
 # **Traffic Sign Recognition** 
 
-## Writeup
-
-### You can use this file as a template for your writeup if you want to submit it as a markdown file, but feel free to use some other method and submit a pdf if you prefer.
-
----
-
-**Build a Traffic Sign Recognition Project**
-
-The goals / steps of this project are the following:
-* Load the data set (see below for links to the project data set)
-* Explore, summarize and visualize the data set
-* Design, train and test a model architecture
-* Use the model to make predictions on new images
-* Analyze the softmax probabilities of the new images
-* Summarize the results with a written report
-
-
-[//]: # (Image References)
-
-[image1]: ./examples/visualization.jpg "Visualization"
-[image2]: ./examples/grayscale.jpg "Grayscaling"
-[image3]: ./examples/random_noise.jpg "Random Noise"
-[image4]: ./examples/placeholder.png "Traffic Sign 1"
-[image5]: ./examples/placeholder.png "Traffic Sign 2"
-[image6]: ./examples/placeholder.png "Traffic Sign 3"
-[image7]: ./examples/placeholder.png "Traffic Sign 4"
-[image8]: ./examples/placeholder.png "Traffic Sign 5"
-
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
 
@@ -65,19 +37,8 @@ The first step to preprocess the images is to create a copy of the image(so we w
 
 Here is an example of a traffic sign image before and after grayscaling.
 
-![alt text][image2]
-
-As a last step, I normalized the image data because ...
-
-I decided to generate additional data because ... 
-
-To add more data to the the data set, I used the following techniques because ... 
-
-Here is an example of an original image and an augmented image:
-
-![alt text][image3]
-
-The difference between the original data set and the augmented data set is the following ... 
+![alt text][https://github.com/ektorasdev/Traffic-Signs-Classifier/tree/master/grayscale_img/image_30.PNG]
+![alt text][https://github.com/ektorasdev/Traffic-Signs-Classifier/tree/master/grayscale_img/image_prior.PNG]
 
 
 #### 2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
@@ -110,13 +71,8 @@ The model was trained using Adam Optimizer. The batch size was 128 with 35 epoch
 #### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
 My final model results were:
-* validation set accuracy of 95% 
+* validation set accuracy of 93% 
 * test set accuracy of 93%
-
-If a well known architecture was chosen:
-* What architecture was chosen?
-* Why did you believe it would be relevant to the traffic sign application?
-* How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
 
 To train the model i used the LeNet architecture and mostly by tweaking variables like the learning rate, batch size and appropriate data preprocessing including normalization/grayscaling, i managed to raise the validation accuracy and get the 93% test accuracy result.
  
@@ -127,10 +83,13 @@ To train the model i used the LeNet architecture and mostly by tweaking variable
 
 From the German Traffic Signs i've provided 6 images:
 
-![alt text][predict_signs/image_1.jpg] ![alt text][predict_signs/image_2.jpg] ![alt text][predict_signs/image_3.jpg] 
-![alt text][predict_signs/image_4.jpg] ![alt text][predict_signs/image_5.jpg] ![alt text][predict_signs/image_6.jpg]
+![alt text][https://github.com/ektorasdev/Traffic-Signs-Classifier/tree/master/predict_signs/image_1.jpg] 
+![alt text][https://github.com/ektorasdev/Traffic-Signs-Classifier/tree/master/predict_signs/image_2.jpg] 
+![alt text][https://github.com/ektorasdev/Traffic-Signs-Classifier/tree/master/predict_signs/image_3.jpg] 
+![alt text][https://github.com/ektorasdev/Traffic-Signs-Classifier/tree/master/predict_signs/image_4.jpg] 
+![alt text][https://github.com/ektorasdev/Traffic-Signs-Classifier/tree/master/predict_signs/image_6.jpg]
 
-The difficulties for these images where mostly due to the background of each image or based on the shape. For example triangle shaped signs are harder to classify compared to circled shaped signs.
+The difficulties for these signs where mostly due to the background of each sign or based on the shape. For example triangle shaped signs are complete different from circled shaped signs and so the classification will be completly different.
 
 #### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
@@ -145,7 +104,7 @@ From the prediction of the custom images the result where as followed:
 | Stop					| Road work  									|
 
 
-The model was able to correctly guess 3 of the 5 traffic signs, which gives an accuracy of 60%. This compares favorably to the accuracy on the test set of ...
+The model was able to correctly guess 3 of the 5 traffic signs, which gives an accuracy of 60%.
 
 #### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
