@@ -27,8 +27,6 @@ signs data set:
 
 Here is an exploratory visualization of the data set. It is a bar chart showing how the data ...
 
-![alt text][image1]
-
 ### Design and Test a Model Architecture
 
 #### 1. Describe how you preprocessed the image data. What techniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, and provide example images of the additional data. Then describe the characteristics of the augmented training set like number of images in the set, number of images for each class, etc.)
@@ -37,8 +35,8 @@ The first step to preprocess the images is to create a copy of the image(so we w
 
 Here is an example of a traffic sign image before and after grayscaling.
 
-[image1]: ./grayscale_img/image_30.PNG
-[image2]: ./grayscale_img/image_prior.PNG
+[image]: ./grayscale_img/image_30.PNG
+[image]: ./grayscale_img/image_prior.PNG
 
 
 #### 2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
@@ -83,11 +81,11 @@ To train the model i used the LeNet architecture and mostly by tweaking variable
 
 From the German Traffic Signs i've provided 6 images:
 
-[image3]: ./predict_signs/image_1.jpg
-[image4]: ./predict_signs/image_2.jpg
-[image5]: ./predict_signs/image_3.jpg
-[image6]: ./predict_signs/image_4.jpg
-[image7]: ./predict_signs/image_6.jpg
+[image1]: ./predict_signs/image_1.jpg
+[image1]: ./predict_signs/image_2.jpg
+[image1]: ./predict_signs/image_3.jpg
+[image1]: ./predict_signs/image_4.jpg
+[image1]: ./predict_signs/image_6.jpg
 
 The difficulties for these signs where mostly due to the background of each sign or based on the shape. For example triangle shaped signs are complete different from circled shaped signs and so the classification will be completly different.
 
