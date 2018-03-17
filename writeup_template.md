@@ -25,13 +25,16 @@ signs data set:
 
 #### 2. Include an exploratory visualization of the dataset.
 
-Here is an exploratory visualization of the data set. It is a bar chart showing how the data ...
+Here is an exploratory visualization of the data set.
+![title](./grayscale_img/chart.PNG)
 
 ### Design and Test a Model Architecture
 
 #### 1. Describe how you preprocessed the image data. What techniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, and provide example images of the additional data. Then describe the characteristics of the augmented training set like number of images in the set, number of images for each class, etc.)
 
 The first step to preprocess the images is to create a copy of the image(so we won't edit the original), then on the copied image i add a conversion to grayscale using openCV cvtColor, then i resize the image to the dimensions we need for the training which is 32x32x1, after that i normalize the image and append it in the resulting array.
+
+Why grayscale and normilize? Grayscaling is done to extract only the information we need to process the image and normalization is done to bring the image in a state that is more "normal" to process hence the word normalization.
 
 Here is an example of a traffic sign image before and after grayscaling.
 
@@ -72,7 +75,7 @@ My final model results were:
 * validation set accuracy of 93% 
 * test set accuracy of 93%
 
-To train the model i used the LeNet architecture and mostly by tweaking variables like the learning rate, batch size and appropriate data preprocessing including normalization/grayscaling, i managed to raise the validation accuracy and get the 93% test accuracy result.
+To train the model i used the LeNet architecture. I started the training by having a learning rate of 0.006, 10 epochs, 150 batch size and a probability of 1.0. With these variables i was able to get a 98% validation accuracy but the maximum test accuracy i was getting was only 90%. Then i decided to make a change by removing the probability factor and increase the epochs to 25. With that after a few training sets i got a result of 91.3%. So i decided to tune the variables even more and after a lot of training examples i managed to get a 93% test validation with a learning rate of 0.001, 35 epochs and 128 batch size.
  
 
 ### Test a Model on New Images
@@ -87,7 +90,7 @@ From the German Traffic Signs i've provided 6 images:
 ![title](./predict_signs/image_4.jpg)
 ![title](./predict_signs/image_6.jpg)
 
-The difficulties for these signs where mostly due to the background of each sign or based on the shape. For example triangle shaped signs are complete different from circled shaped signs and so the classification will be completly different.
+The difficulties for these signs where mostly due to the background of each sign or based on the shape. For example a bad lightning can wrongly classify an image or a blurry triangle image might be classified as circled.
 
 #### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
@@ -95,17 +98,35 @@ From the prediction of the custom images the result where as followed:
 
 | Image			        |     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| Speed limit (30km/h)  | Stop   										| 
+| Speed limit (30km/h)  | Roundabout Mandatory   						| 
 | Priority road  		| Priority Road 								|
 | Yield					| Yield											|
 | No entry	      		| No Entry  					 				|
 | Stop					| Road work  									|
 
 
-The model was able to correctly guess 3 of the 5 traffic signs, which gives an accuracy of 60%.
+The model was able to correctly guess 3 of the 5 traffic signs, which gives an accuracy of 60%. That's really low compared to the test accuracy which is 93%, but this result is only with 5 images, so we are expecting a better result closer to the test accuracy if we had more images to classify.
 
 #### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
-The answer above apply for this question too.
+The result of the prediction of each i got was as follows:
 
+For the speed limit 30km/h the correct label is 1 but the prediction result was:
+Probabilities: [0.05825923 0.02340354 0.02240251 0.02239837 0.02239836]
+Classes: [40 37 20 10  0]
 
+For the priority road the correct label is 12 and the result was:
+Probabilities: [0.0607866  0.02236228 0.02236223 0.02236222 0.02236222]
+Classes: [12 38 40  0  1]
+
+For the yield the correct label is 13 and the result was:
+Probabilities: [0.06078678 0.02236221 0.02236221 0.02236221 0.02236221]
+Classes: [13  0  1  2  3]
+
+For the no entry the label is 17 and the result was:
+Probabilities: [0.06078678 0.02236221 0.02236221 0.02236221 0.02236221]
+Classes: [17  0  1  2  3]
+
+For the stop the label is 14 and the result was:
+Probabilities: [0.03996198 0.03338726 0.02334022 0.02264303 0.0226068 ]
+Classes: [ 9 28 13 38 40]
